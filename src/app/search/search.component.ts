@@ -30,7 +30,7 @@ export class SearchComponent implements OnInit {
     this.searchControl = new FormControl();
     this.mapsApiLoader.load().then(() => {
       const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-        // types: ['establishment']
+        // types: ['regions']
       });
       autocomplete.addListener('place_changed', () => {
         this.ngZone.run(() => {
