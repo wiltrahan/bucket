@@ -29,20 +29,23 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this.searchControl = new FormControl();
     this.mapsApiLoader.load().then(() => {
-      const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-        // types: ['regions']
-      });
-      autocomplete.addListener('place_changed', () => {
+      // const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+      //   // types: ['regions']
+      // });
+      const autocomplete = new google.maps.places.SearchBox(this.searchElementRef.nativeElement);
+      autocomplete.addListener('places_changed', () => {
         this.ngZone.run(() => {
-          const place: google.maps.places.PlaceResult = autocomplete.getPlace();
-          if (place.geometry === undefined || place.geometry === null) {
-            return;
-          }
+          // const place: google.maps.places.PlaceResult = autocomplete.getPlace();
+          const place = autocomplete.getPlaces();
+          console.log(place);
+          // if (place.geometry === undefined || place.geometry === null) {
+          //   return;
+          // }
 
-          this.latitude = place.geometry.location.lat();
-          this.longitude = place.geometry.location.lng();
-          this.zoom = 18;
-          this.mapComponent.onSearchedLocation(this.latitude, this.longitude, this.zoom);
+          // this.latitude = place.geometry.location.lat();
+          // this.longitude = place.geometry.location.lng();
+          // this.zoom = 18;
+          // this.mapComponent.onSearchedLocation(this.latitude, this.longitude, this.zoom);
         });
       });
     });
