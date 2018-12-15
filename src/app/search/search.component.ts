@@ -37,15 +37,18 @@ export class SearchComponent implements OnInit {
         this.ngZone.run(() => {
           // const place: google.maps.places.PlaceResult = autocomplete.getPlace();
           const place = autocomplete.getPlaces();
-          console.log(place);
+          console.log('lat ' + place[0].geometry.location.lat());
+          console.log('lng ' + place[0].geometry.location.lng());
           // if (place.geometry === undefined || place.geometry === null) {
           //   return;
           // }
 
           // this.latitude = place.geometry.location.lat();
+          this.latitude = place[0].geometry.location.lat();
           // this.longitude = place.geometry.location.lng();
-          // this.zoom = 18;
-          // this.mapComponent.onSearchedLocation(this.latitude, this.longitude, this.zoom);
+          this.longitude = place[0].geometry.location.lng();
+          this.zoom = 18;
+          this.mapComponent.onSearchedLocation(this.latitude, this.longitude, this.zoom);
         });
       });
     });

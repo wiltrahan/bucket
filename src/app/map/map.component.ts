@@ -29,6 +29,7 @@ export class MapComponent implements OnInit {
   onSearchedLocation(lat: number, lng: number, zoom: number) {
     this.latitude = lat;
     this.longitude = lng;
+    this.locationChosen = true;
     this.zoom = zoom;
   }
 }
