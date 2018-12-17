@@ -39,6 +39,7 @@ export class SearchComponent implements OnInit {
           const place = autocomplete.getPlaces();
           console.log('lat ' + place[0].geometry.location.lat());
           console.log('lng ' + place[0].geometry.location.lng());
+          console.log('place ' + place[0].name);
           // if (place.geometry === undefined || place.geometry === null) {
           //   return;
           // }

@@ -32,4 +32,8 @@ export class MapComponent implements OnInit {
     this.locationChosen = true;
     this.zoom = zoom;
   }
+
+  onMouseOver(event) {
+    console.log(event.coords.lat);
+  }
 }

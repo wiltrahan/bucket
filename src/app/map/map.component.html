@@ -9,8 +9,9 @@
     <agm-marker 
       [latitude]="latitude" 
       [longitude]="longitude"
+      (mouseOver)="onMouseOver($event)"
       *ngIf="locationChosen">
-      <agm-info-window>INFO WILL BE HERE!!</agm-info-window>
+      <agm-info-window>Info will go here.</agm-info-window>
     </agm-marker>
   </agm-map>
 </div>
