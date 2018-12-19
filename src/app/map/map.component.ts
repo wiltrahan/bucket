@@ -26,7 +26,7 @@ export class MapComponent implements OnInit {
     this.locationChosen = true;
   }
 
-  onSearchedLocation(lat: number, lng: number, zoom: number) {
+  onSearchedLocation(lat: number, lng: number, zoom: number, place: object[]) {
     this.latitude = lat;
     this.longitude = lng;
     this.locationChosen = true;

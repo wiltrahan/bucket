@@ -16,6 +16,7 @@ export class SearchComponent implements OnInit {
   longitude: number;
   searchControl: FormControl;
   zoom: number;
+  myName: string;
 
   @ViewChild('search')
   public searchElementRef: ElementRef;
@@ -39,7 +40,10 @@ export class SearchComponent implements OnInit {
           const place = autocomplete.getPlaces();
           console.log('lat ' + place[0].geometry.location.lat());
           console.log('lng ' + place[0].geometry.location.lng());
-          console.log('place ' + place[0].name);
+          console.log(place);
+          for (let i = 0; i < place.length; i++) {
+            console.log(place[i].name);
+          }
           // if (place.geometry === undefined || place.geometry === null) {
           //   return;
           // }
@@ -49,7 +53,7 @@ export class SearchComponent implements OnInit {
           // this.longitude = place.geometry.location.lng();
           this.longitude = place[0].geometry.location.lng();
           this.zoom = 18;
-          this.mapComponent.onSearchedLocation(this.latitude, this.longitude, this.zoom);
+          this.mapComponent.onSearchedLocation(this.latitude, this.longitude, this.zoom, place);
         });
       });
     });
