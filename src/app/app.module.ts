@@ -7,8 +7,9 @@ import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/google-maps-autocomplete';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/go
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MaterialModule,
     AgmCoreModule.forRoot(priv),
     MatGoogleMapsAutocompleteModule.forRoot()
   ],

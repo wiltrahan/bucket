@@ -53,7 +53,7 @@ export class SearchComponent implements OnInit {
           // this.longitude = place.geometry.location.lng();
           this.longitude = place[0].geometry.location.lng();
           this.zoom = 18;
-          this.mapComponent.onSearchedLocation(this.latitude, this.longitude, this.zoom, place);
+          this.mapComponent.onSearchedLocation(this.latitude, this.longitude, this.zoom);
         });
       });
     });
