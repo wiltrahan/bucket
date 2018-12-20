@@ -4,7 +4,7 @@ import { MapComponent } from './../map/map.component';
 import { Component, OnInit, ElementRef, NgZone, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MapsAPILoader } from '@agm/core';
-
+import { SearchedListComponent } from './../searched-list/searched-list.component';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -24,15 +24,13 @@ export class SearchComponent implements OnInit {
   constructor(
     private mapsApiLoader: MapsAPILoader,
     private ngZone: NgZone,
-    private mapComponent: MapComponent
+    private mapComponent: MapComponent,
+    private searchedListComponent: SearchedListComponent
   ) { }
 
   ngOnInit() {
     this.searchControl = new FormControl();
     this.mapsApiLoader.load().then(() => {
-      // const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-      //   // types: ['regions']
-      // });
       const autocomplete = new google.maps.places.SearchBox(this.searchElementRef.nativeElement);
       autocomplete.addListener('places_changed', () => {
         this.ngZone.run(() => {
@@ -47,13 +45,11 @@ export class SearchComponent implements OnInit {
           // if (place.geometry === undefined || place.geometry === null) {
           //   return;
           // }
-
-          // this.latitude = place.geometry.location.lat();
           this.latitude = place[0].geometry.location.lat();
-          // this.longitude = place.geometry.location.lng();
           this.longitude = place[0].geometry.location.lng();
           this.zoom = 18;
           this.mapComponent.onSearchedLocation(this.latitude, this.longitude, this.zoom);
+          this.searchedListComponent.openSearchedList();
         });
       });
     });

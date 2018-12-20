@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material';
 
 @Component({
   selector: 'app-searched-list',
   templateUrl: './searched-list.component.html',
   styleUrls: ['./searched-list.component.scss']
 })
-export class SearchedListComponent implements OnInit {
+@Injectable()
+export class SearchedListComponent  {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
-  ngOnInit() {
+  openSearchedList(): void {
+    this.dialog.open(SearchedListComponent, {
+      width: '400px',
+      position: { right: '0'}
+    });
   }
 
 }
