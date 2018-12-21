@@ -4,7 +4,7 @@
   <mat-list>
     <mat-list-item *ngFor="let place of passedData.places">
       <p matLine>{{place.name}}</p>
-      <p matLine>{{place.rating}}</p>
+      <p matLine>Rating: {{place.rating}} out of 5</p>
       <p matLine>{{place.formatted_address}}</p>
     </mat-list-item>
     
