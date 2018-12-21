@@ -31,7 +31,7 @@ import { BucketListComponent } from './bucket-list/bucket-list.component';
     AgmCoreModule.forRoot(priv),
     MatGoogleMapsAutocompleteModule.forRoot()
   ],
-  providers: [MapComponent, SearchedListComponent],
+  providers: [MapComponent],
   bootstrap: [AppComponent],
   entryComponents: [SearchedListComponent]
 })
