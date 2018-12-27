@@ -31,25 +31,23 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.searchControl = new FormControl();
+    this.beginSearch();
+  }
+
+  beginSearch() {
     this.mapsApiLoader.load().then(() => {
       const autocomplete = new google.maps.places.SearchBox(this.searchElementRef.nativeElement);
       autocomplete.addListener('places_changed', () => {
         this.ngZone.run(() => {
           const place = autocomplete.getPlaces();
-          // console.log('lat ' + place[0].geometry.location.lat());
-          // console.log('lng ' + place[0].geometry.location.lng());
           console.log(place);
-          // for (let i = 0; i < place.length; i++) {
-          //   console.log(place[i].name);
-          // }
           if (place.length === 0) {
             alert('No results, try something else.');
             return;
           }
           this.latitude = place[0].geometry.location.lat();
           this.longitude = place[0].geometry.location.lng();
-          this.zoom = 18;
-          this.mapComponent.onSearchedLocation(this.latitude, this.longitude, this.zoom);
+          this.mapComponent.onSearchedLocation(this.latitude, this.longitude, 18);
           this.onSearch(place);
         });
       });
