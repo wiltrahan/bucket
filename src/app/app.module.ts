@@ -13,13 +13,17 @@ import { MaterialModule } from './material.module';
 import { SearchedListComponent } from './searched-list/searched-list.component';
 import { BucketListComponent } from './bucket-list/bucket-list.component';
 import { FlexLayoutModule, CoreModule } from '@angular/flex-layout';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     SearchComponent,
     SearchedListComponent,
-    BucketListComponent
+    BucketListComponent,
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
