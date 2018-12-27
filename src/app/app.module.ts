@@ -12,7 +12,7 @@ import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/go
 import { MaterialModule } from './material.module';
 import { SearchedListComponent } from './searched-list/searched-list.component';
 import { BucketListComponent } from './bucket-list/bucket-list.component';
-
+import { FlexLayoutModule, CoreModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +28,8 @@ import { BucketListComponent } from './bucket-list/bucket-list.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FlexLayoutModule,
+    CoreModule,
     AgmCoreModule.forRoot(priv),
     MatGoogleMapsAutocompleteModule.forRoot()
   ],

@@ -1,2 +1,26 @@
-<router-outlet>
-</router-outlet>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="bucket-list">
+    <p>Bucket List Items...</p>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div>
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div>LOGO</div>
+      <div fxFlex fxLayout fxLayoutAlign="flex-end">
+        <ul fxLayout fxLayoutGap="10px" class="nav-items">
+          <li><a routerLink="/">Signup</a></li>
+          <li><a routerLink="/">Login</a></li>
+        </ul>
+      </div>
+    </mat-toolbar>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
