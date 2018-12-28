@@ -15,6 +15,7 @@ import { BucketListComponent } from './bucket-list/bucket-list.component';
 import { FlexLayoutModule, CoreModule } from '@angular/flex-layout';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
+import { HeaderComponent } from './navigation/header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { LoginComponent } from './auth/login/login.component';
     SearchedListComponent,
     BucketListComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
