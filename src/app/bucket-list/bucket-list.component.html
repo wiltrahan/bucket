@@ -1,5 +1,11 @@
-<mat-nav-list>
+<!-- <mat-nav-list>
     <mat-list-item>Bucket List Item 1...</mat-list-item>
     <mat-list-item>Bucket List Item 2...</mat-list-item>
     <mat-list-item>Bucket List Item 3...</mat-list-item>
+</mat-nav-list> -->
+
+<mat-nav-list>
+  <app-searched-list 
+    *ngFor="let name of places"
+    [placeName]="name"></app-searched-list>
 </mat-nav-list>
