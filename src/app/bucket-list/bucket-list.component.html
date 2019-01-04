@@ -4,8 +4,35 @@
     <mat-list-item>Bucket List Item 3...</mat-list-item>
 </mat-nav-list> -->
 
-<mat-nav-list>
-  <app-searched-list 
-    *ngFor="let name of places"
-    [placeName]="name"></app-searched-list>
-</mat-nav-list>
+<!-- <mat-nav-list>
+  <mat-list-item>
+    <app-searched-list 
+      *ngFor="let name of places"
+      [placeName]="name"></app-searched-list>
+  </mat-list-item>
+</mat-nav-list> -->
+<!-- <mat-list>
+  <mat-list-item *ngIf="places; else nothingAdded"></mat-list-item>
+  <ng-template #nothingAdded>
+    <p>Add Something!</p>
+  </ng-template>
+</mat-list> -->
+
+<!-- <mat-list>
+    <mat-list-item *ngFor="let place of passedData.places">
+      <p matLine>{{place.name}}</p>
+      <p matLine>Rating: {{place.rating}} out of 5</p>
+      <p matLine>{{place.formatted_address}}</p>
+      <p matLine>
+          <button class="mat-raised-button" (click)="selectedPlace(place.name)">ADD</button>
+      </p>
+    </mat-list-item> 
+  </mat-list> -->
+
+  <ng-container *ngIf="places.length > 0">
+    <mat-nav-list>
+    <mat-list-item *ngFor="let place of places">
+        <p matLine>{{place}}</p>
+    </mat-list-item>
+  </mat-nav-list>
+  </ng-container>

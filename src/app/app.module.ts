@@ -39,7 +39,9 @@ import { HeaderComponent } from './navigation/header/header.component';
     AgmCoreModule.forRoot(priv),
     MatGoogleMapsAutocompleteModule.forRoot()
   ],
-  providers: [MapComponent],
+  providers: [MapComponent,
+              BucketListComponent
+            ],
   bootstrap: [AppComponent],
   entryComponents: [SearchedListComponent]
 })
