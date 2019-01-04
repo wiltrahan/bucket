@@ -1,4 +1,4 @@
-<mat-sidenav-container>
+<!-- <mat-sidenav-container>
   <mat-sidenav #sidenav role="bucket-list">
     <app-bucket-list></app-bucket-list>
   </mat-sidenav>
@@ -8,6 +8,18 @@
         <router-outlet></router-outlet>
       </main>
   </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-sidenav-container> -->
 
 
+<mat-drawer-container class="example-container" [hasBackdrop]="true">
+  <mat-drawer #drawer [mode]="over">
+    <app-bucket-list></app-bucket-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (bucketListToggle)="drawer.toggle()"></app-header>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+  </mat-drawer-content>
+</mat-drawer-container>
+  
