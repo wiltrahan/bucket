@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Injectable } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 
 @Component({
   selector: 'app-bucket-list',
